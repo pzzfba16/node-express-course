@@ -19,7 +19,15 @@ app.get('/users', function(req, res) {
     })
 })
 
-/* SERVER */
+app.get('/users/:id', function(req, res) {
+        console.log(req.params.id)
+        res.json({
+            success: true,
+            message: 'Utente trovato!',
+            user: req.params.id
+        })
+    })
+    /* SERVER */
 app.listen(8000, function() {
     console.log("Il server funziona!")
 })
